@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <!--
+AUTHOR: Patrick Frison - Mubuntu
+TODO: maak de pagina na genaamd http://www.jsbin.com  -->
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="master.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="script.js">
+        </script>
+        <script type="text/javascript" src="jquery.min.js">
+        </script>
+        <title>Play your code!</title>
+    </head>
+
+    <body>
+        <div id="header">
+            <!-- logo (binnin header)-->
+            <div id="logo">
+                CodePlayer
+            </div>
+            <!-- verschillende knopjes binnenin header-->
+            <div id="buttonContainer">
+                <div class="toggleButton active" id="html">
+                    HTML
+                </div>
+                <div class="toggleButton" id="css">
+                    CSS
+                </div>
+                <div class="toggleButton" id="javascript">
+                    JavaScript
+                </div>
+                <div class="toggleButton active" id="output">
+                    Output
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+        /*TODO: maak togglebutton interactie aan zodat ze verkleuren */
+        $(".toggleButton").hover(mouseEnter, mouseLeave);
+
+        function mouseEnter() {
+          /* we veranderen hier de aanpassing van css
+             naar een aanpassing van de klasse:
+            $(this).css("background-color", "grey");
+            */
+            $(this).addClass("highlightedButton");
+        }
+
+        function mouseLeave() {
+            //$(this).css("background-color", "#EEEEEE");
+            $(this).removeClass("highlightedButton");
+        }
+        /*wanneer de button wordt aangeklikt
+          togglen we de klasse naar active */
+          function toggleButton(){
+            $(this).toggleClass("active");
+            /*bij het klikken van de knopjes
+              moet de highlight verdwijnen */            
+            $(this).removeClass("highlightedButton");
+          }
+$(".toggleButton").click(toggleButton);
+        </script>
+    </body>
+
+</html>
